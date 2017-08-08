@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Star Wars RPG</title>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+	
+	<div class="char" data-hp="100" data-atk="5" data-counter="25">CHAR 1 <meter class="char char-hp" value="" min="0" max=""></meter>
+	</div>
+	<div class="char" data-hp="120" data-atk="5" data-counter="25">CHAR 2 <meter class="char char-hp" value="" min="0" max=""></meter>
+	</div>
+	<div class="char" data-hp="150" data-atk="5" data-counter="25">CHAR 3 <meter class="char char-hp" value="" min="0" max=""></meter>
+	</div>
+	<div class="char" data-hp="200" data-atk="5" data-counter="25">CHAR 4 <meter class="char char-hp" value="" min="0" max=""></meter>
+	</div>
+
+	<button class="atk-btn"><p>Attack!</p></button>
+
+	<div id="stage">Arena: 
+		<div><span id="player-stage">Player: </span> VS <span id="opponent-stage">Opponent: </span></div> 
+	</div>
+
+
+
+	<script>
+	  $(document).ready(function(){
+	  	
+	  	var arenaFilled = "empty"
+	  	console.log(arenaFilled);
+
+	  	var playerHp;
+	  	var playerAtk;
+
+	  	var enemyHp;
+	  	var enemyCounter;
+
+	  	$(".char").on("click",function(){
+	  		if (arenaFilled === "empty"){
+	  			arenaFilled = "playerFilled";
+	  			playerHp = $(this).attr('data-hp');
+	  			playerAtk = $(this).attr('data-atk');
+	  			
+	  			$(this).appendTo("#player-stage");
+
+	  			console.log("Arena: " + arenaFilled);
+	  			console.log("Player: " + playerHp + " HP");
+	  			console.log("Player: " + playerAtk + " ATK");
+	  		}
+	  
+
+	  		else if (arenaFilled === "playerFilled"){
+	  		 	arenaFilled = "opponentFilled";
+	  		 	enemyHp = $(this).attr('data-hp');
+	  			enemyCounter = $(this).attr('data-counter');
+
+	  		 	$(this).appendTo("#opponent-stage");
+
+	  		 	console.log("Arena: " + arenaFilled);
+	  		 	console.log("Opponent: " + enemyHp + " HP");
+	  			console.log("Opponent: " + enemyCounter + " COUNTERATK");
+	  		 };
+
+			});
+
+
+	  	$(".atk-btn").on("click",function(){
+	  		enemyHp -= playerAtk;
+	  		console.log("Player Attacked for " + playerAtk + " damage!");
+	  		console.log("Opponent: " + enemyHp + " HP");
+	  		
+	  		playerHp -= enemyCounter;
+	  		console.log("Enemy countered for " + enemyCounter + " damage!");
+	  		console.log("Player: " + playerHp + " HP");
+	  	});
+
+
+
+	  	
+
+	  	//Loss Condition
+	  	if (playerHp <= 0){
+	  		console.log("GAME OVER! YOU SUUUUCK!");
+	  	}	
+
+
+	  });
+
+	</script>
+
+</body>
+</html>

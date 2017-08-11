@@ -11,58 +11,64 @@
 </head>
 <body>
 
-	<div class="row">
+<!--	<div class="row">
 		<div class="col-lg-12">
-			<img class="logo" src="./assets/images/fallout_logo.png">
+			<img class="logo" src="./assets/images/center_logo.png">
 		</div>
-	</div>
+	</div> -->
 
 <!--MAKE HP-DISPLAY SHOW REAL TIME DECREASE IN HP-->
 <!--Char 1 Profile + Stats + HP-->
-<div class="container">
-	<div class="char" data-hp="120" data-atk="12" data-counter="28">CHAR 1 
-		<div><img src="./assets/images/active_boy.gif" style="width: 200px"></div>
+
+	<div class="char" data-hp="120" data-atk="12" data-counter="28">
+	<div class="char-title">CHAR 1</div>
+		<div><img class="profile" src="./assets/images/active_boy.gif" style="width: 200px"></div>
 		<div class="progress">
 		  <div class="progress-bar pb1" role="progressbar" aria-valuenow="70"
 		  aria-valuemin="0" aria-valuemax="120" style="width:100%">
 		  </div>
 		</div>
-		<div><span class ="hp-display">120</span><span>/120</span></div>
+		<div class="hp-all"><span class ="hp-display">120</span><span>/120</span></div>
 	</div>
 
 	<!--Char 2 Profile + Stats + HP-->
-	<div class="char" data-hp="150" data-atk="10" data-counter="23">CHAR 2 
-		<div><img src="./assets/images/beer_boy.gif" style="width: 200px"></div>
+	<div class="char" data-hp="150" data-atk="10" data-counter="23">
+	<div class="char-title">CHAR 2</div> 
+		<div><img class="profile" src="./assets/images/beer_boy.gif" style="width: 200px"></div>
 		<div class="progress">
 		  <div class="progress-bar pb2" role="progressbar" aria-valuenow="70"
 		  aria-valuemin="0" aria-valuemax="150" style="width:100%">
 		  </div>
 		</div>
-		<div><span class ="hp-display">150</span><span>/150</span></div>
+		<div class="hp-all"><span class ="hp-display">150</span><span>/150</span></div>
 	</div>
 
 <!--Char 3 Profile + Stats + HP-->
-	<div class="char" data-hp="180" data-atk="8" data-counter="18">CHAR 3
-		<div><img src="./assets/images/buff_boy.gif" style="width: 200px"></div>
+	<div class="char" data-hp="180" data-atk="8" data-counter="18">
+	<div class="char-title">CHAR 3</div>
+		<div><img class="profile" src="./assets/images/buff_boy.gif" style="width: 200px"></div>
 		<div class="progress">
 		  <div class="progress-bar pb3" role="progressbar" aria-valuenow="70"
 		  aria-valuemin="0" aria-valuemax="180" style="width:100%">
 		   
 		  </div>
 		</div>
-		<div><span class ="hp-display">180</span><span>/180</span></div>
+		<div class="hp-all"><span class ="hp-display">180</span><span>/180</span></div>
 	</div>
 
 <!--Char 4 Profile + Stats + HP-->
-	<div class="char" data-hp="200" data-atk="7" data-counter="13">CHAR 4 
-		<div><img src="./assets/images/cat_boy.gif" style="width: 200px"></div>
+	<div class="char" data-hp="200" data-atk="7" data-counter="13">
+	<div class="char-title">CHAR 4</div> 
+		<div><img class="profile" src="./assets/images/cat_boy.gif" style="width: 200px"></div>
 		<div class="progress">
 		  <div class="progress-bar pb3" role="progressbar" aria-valuenow="70"
 		  aria-valuemin="0" aria-valuemax="200" style="width:100%">
 		  </div>
 		</div>
-		<div><span class ="hp-display">200</span><span>/200</span></div>
+		<div class="hp-all"><span class ="hp-display">200</span><span>/200</span></div>
 	</div>
+
+
 
 	<button class="atk-btn"><p>Attack!</p></button>
 	<button class="reset-btn" style="visibility:hidden"><p>Restart!</p></button>
@@ -75,7 +81,7 @@
 		</div>
 
 	<div id="result-box"></div>
-</div>	
+	
 
 
 
@@ -95,6 +101,8 @@
 	  	var enemyHpFull;
 	  	var enemyCounter;
 
+	  	var clickityClack;//holds atk-btn function
+
 	  	var that; // stores class char parent for player
 	  	var thut; //stores class char parent for opponent
 	  	//Character selection
@@ -111,7 +119,7 @@
 	  			//off click to prevent player from becoming opponent
 	  			$(this).off('click');
 
-	  			//$(".atk-btn").off('click')
+	  			$(".atk-btn").off('click')
 
 	  			
 
@@ -131,7 +139,8 @@
 	  		 	$(this).appendTo("#opponent-stage");
 	  		 	$(this).addClass("enemy");
 
-	  		 	//$(".atk-btn").on('click', clickityClack);
+	  		 	//turns on atk-btn with function clickityClack
+	  		 	$(".atk-btn").on('click', clickityClack);
 
 	  		 	console.log("Arena: " + arenaFilled);
 	  		 	console.log("Opponent: " + enemyHp + " HP");
@@ -141,7 +150,7 @@
 			});
 
 	  	//Attack Button
-	  	$(".atk-btn").on("click",function clickityClack(){
+	  	function clickityClack(){
 	  		//Fight must occur in phases: Player Attacks, checks if opponent is defeated. If not, opponent attacks, checks if player is defeated.
 
 	  		//Player attacks
@@ -152,13 +161,16 @@
 
 	  		//After opponent is defeated
 	  		if (enemyHp <= 0){
-	  			$(".enemy").remove()
+	  			$(".enemy").remove();
 	  			arenaFilled = 1;
 	  			killCount += 1;
 
 	  			enemyHp = 0;
 	  			enemyHpFull = 0;
 	  			enemyCounter = 0;
+
+	  			//turns off atk-btn when opponent hp is dead
+	  			$(".atk-btn").off('click');
 	  			console.log("Kill Count: " + killCount)
 				}
 
@@ -217,7 +229,9 @@
 				if (killCount === 3){
 					console.log("YOU WIN!");
 				}	
-	  		});
+	  	};
+
+
 
 	  	//Reset Button
 	  	$(".reset-btn").on("click",function(){

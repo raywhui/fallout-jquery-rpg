@@ -1,5 +1,61 @@
+@font-face{
+	font-family: "Bebas Neue";
+	src:url("../font/BebasNeue Bold.otf");
+}
+
+body{
+	/*padding: 20%;*/
+	position:relative;
+	font-family: "Bebas Neue";
+	background-image: url("../images/background.png");
+	background-size: 95% 95%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: black;
+	font-size: 20pt;
+	font-weight: bold;
+	padding:10%;
+	color: #0dfe17;
+
+}
+
 .logo{   
+	position:absolute;
+	right:50%;
+	top:50%;
 	width: 35%;
-  display: block;
-  margin: 0 auto;
+	opacity: 0.1;
+
+}
+
+.profile{
+	border: 2px solid #0dfe17;
+	padding:5px;
+}
+
+.char{
+	position:relative;
+	width:200px;
+	text-align:center;
+	margin: 5px 0;
+
+}
+
+.char-title{
+	position:absolute;
+	left:36%;
+	top:1%;
+}
+
+.progress{
+	background-color: black;
+	border: 1px solid #0dfe17;
+	margin:5% 10%;
+}
+.progress-bar{
+	background-color:#0dfe17;
+}
+
+.hp-all{
+	margin-top:-12px;
 }

@@ -13,7 +13,8 @@ body{
 	background-color: transparent;
 	background-position: center;
 	background-size:100% 100%;
-	opacity: 0.7;
+	opacity: 0.65;
+
 }
 
 html{
@@ -39,11 +40,30 @@ html{
 
 .logo{   
 	position:absolute;
-	right:50%;
-	top:50%;
-	width: 35%;
-	opacity: 0.1;
+	right: 36%;
+  top: 21%;
+  width: 35%;
+  opacity: 0.3;
 
+}
+
+.music-logo{
+	position:absolute;
+	opacity: 0.7;
+	left: 3%;
+  top: -20%;
+}
+
+.warning{
+	position:absolute;
+	width: 200px;
+	opacity: 0.7;
+	left: 2%;
+
+}
+
+.music-logo:hover{
+	border: 2px solid #0dfe17;
 }
 
 .profile{
@@ -157,3 +177,7 @@ html{
 	margin: 0 auto;
 }
 
+/*Audio*/
+
+/*Attempting to make typing effect*/
+/* The typing effect */

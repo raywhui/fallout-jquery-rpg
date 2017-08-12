@@ -1,7 +1,8 @@
-	  $(document).ready(function(){
+$(document).ready(function(){
 	  	//DEBUG JS
 	  	//$(".char").css("visibility", "hidden")
-	  	
+	  	$('#song').prop('volume', 0.1);
+
 	  	var killCount = 0;
 	  	var arenaFilled = 0;
 	  	console.log(arenaFilled);
@@ -72,6 +73,11 @@
 
 			});
 
+			// function typingLoop(){
+			// 	$('#top-bar').css("overflow", "hidden");
+			// 	$("#top-bar").animate('typing', start);
+			// };
+
 	  	//Attack Button
 	  	function clickityClack(){
 	  		//Fight must occur in phases: Player Attacks, checks if opponent is defeated. If not, opponent attacks, checks if player is defeated.
@@ -99,7 +105,6 @@
 	  			$(that).css('visibility', 'hidden');
 	  			$(".fight-club").css('visibility','hidden');
 	  			$(".top-bar").html("Please Select Another Genetically Modified Gluten Filled Inorganic Post Nuclear Threat:")
-
 
 	  			console.log("Kill Count: " + killCount)
 				}
@@ -164,6 +169,14 @@
 				if (killCount === 3){
 					$(".top-bar").html("<h1 class='final-text-adjust'>Congratulations on the Completion of the Vault-tec post nuclear survival simulation. You will be contacted by a Vault-tec Representative for access to the nearest vault in the event of an actual nuclear fallout.</h1> <h1>Have a wonderful day!</h1>");
 					$(".row").css('height', 0);
+					$(".reset-btn").css({
+						"visibility": "visible",
+						"top": "90%",
+						"left": "46%"
+					});
+
+					$('.logo').css('top', '24%');
+					$('.music-logo').css('top', '-23%');
 					console.log("YOU WIN!");
 				}	
 	  	};
@@ -176,4 +189,18 @@
 	  	//font #0dfe17
 	  	//TURN OFF BUTTON ATTACK WHEN NO OPPONENT SO IT DOESNT KEEP GOING UP
 
+
+	  //Fun with music icon! :D	
+	  $(".music-logo").on("click",function(){
+	  	$("#song").get(0).play();
 	  });
+
+	  $(".music-logo").mouseover(function() {
+  		$('.warning').css("visibility","visible");
+		});
+
+		$(".music-logo").mouseout(function() {
+  		$('.warning').css("visibility","hidden");
+		});
+
+});

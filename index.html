@@ -7,243 +7,111 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+	<script type="text/javascript" src="./assets/javascript/game.js"></script>
 
 </head>
 <body>
+			<h1 class="top-bar">Please Select a Vault-Tec Representative: </h1>
 
-<!--	<div class="row">
-		<div class="col-lg-12">
-			<img class="logo" src="./assets/images/center_logo.png">
-		</div>
-	</div> -->
 
 <!--MAKE HP-DISPLAY SHOW REAL TIME DECREASE IN HP-->
 <!--Char 1 Profile + Stats + HP-->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-3">
 
-	<div class="char" data-hp="120" data-atk="12" data-counter="28">
-	<div class="char-title">CHAR 1</div>
-		<div><img class="profile" src="./assets/images/active_boy.gif" style="width: 200px"></div>
-		<div class="progress">
-		  <div class="progress-bar pb1" role="progressbar" aria-valuenow="70"
-		  aria-valuemin="0" aria-valuemax="120" style="width:100%">
-		  </div>
-		</div>
-		<div class="hp-all"><span class ="hp-display">120</span><span>/120</span></div>
-	</div>
+			<div class="char char1" data-hp="120" data-atk="12" data-counter="28">
+			<div class="char-title">CHAR 1</div>
+				<div><img class="profile" src="./assets/images/active_boy.gif" style="width: 200px"></div>
+				<div class="progress">
+				  <div class="progress-bar pb1" role="progressbar" aria-valuenow="70"
+				  aria-valuemin="0" aria-valuemax="120" style="width:100%">
+				  </div>
+				</div>
+				<div class="hp-all"><span class ="hp-display">120</span><span>/120</span></div>
+			</div>
+
+		</div><!--col-->
 
 	<!--Char 2 Profile + Stats + HP-->
-	<div class="char" data-hp="150" data-atk="10" data-counter="23">
-	<div class="char-title">CHAR 2</div> 
-		<div><img class="profile" src="./assets/images/beer_boy.gif" style="width: 200px"></div>
-		<div class="progress">
-		  <div class="progress-bar pb2" role="progressbar" aria-valuenow="70"
-		  aria-valuemin="0" aria-valuemax="150" style="width:100%">
-		  </div>
+		<div class="col-lg-3">
+
+			<div class="char char2" data-hp="150" data-atk="10" data-counter="23">
+			<div class="char-title">CHAR 2</div> 
+				<div><img class="profile" src="./assets/images/beer_boy.gif" style="width: 200px"></div>
+				<div class="progress">
+				  <div class="progress-bar pb2" role="progressbar" aria-valuenow="70"
+				  aria-valuemin="0" aria-valuemax="150" style="width:100%">
+				  </div>
+				</div>
+				<div class="hp-all"><span class ="hp-display">150</span><span>/150</span></div>
+			</div>
+
 		</div>
-		<div class="hp-all"><span class ="hp-display">150</span><span>/150</span></div>
-	</div>
 
 <!--Char 3 Profile + Stats + HP-->
-	<div class="char" data-hp="180" data-atk="8" data-counter="18">
-	<div class="char-title">CHAR 3</div>
-		<div><img class="profile" src="./assets/images/buff_boy.gif" style="width: 200px"></div>
-		<div class="progress">
-		  <div class="progress-bar pb3" role="progressbar" aria-valuenow="70"
-		  aria-valuemin="0" aria-valuemax="180" style="width:100%">
-		   
-		  </div>
+		<div class="col-lg-3">
+
+			<div class="char char3" data-hp="180" data-atk="8" data-counter="18">
+			<div class="char-title">CHAR 3</div>
+				<div><img class="profile" src="./assets/images/buff_boy.gif" style="width: 200px"></div>
+				<div class="progress">
+				  <div class="progress-bar pb3" role="progressbar" aria-valuenow="70"
+				  aria-valuemin="0" aria-valuemax="180" style="width:100%">
+				   
+				  </div>
+				</div>
+				<div class="hp-all"><span class ="hp-display">180</span><span>/180</span></div>
+			</div>
+
 		</div>
-		<div class="hp-all"><span class ="hp-display">180</span><span>/180</span></div>
-	</div>
 
 <!--Char 4 Profile + Stats + HP-->
-	<div class="char" data-hp="200" data-atk="7" data-counter="13">
-	<div class="char-title">CHAR 4</div> 
-		<div><img class="profile" src="./assets/images/cat_boy.gif" style="width: 200px"></div>
-		<div class="progress">
-		  <div class="progress-bar pb3" role="progressbar" aria-valuenow="70"
-		  aria-valuemin="0" aria-valuemax="200" style="width:100%">
-		  </div>
-		</div>
-		<div class="hp-all"><span class ="hp-display">200</span><span>/200</span></div>
-	</div>
+			<div class="col-lg-3">
+
+				<div class="char char4" data-hp="200" data-atk="7" data-counter="13">
+				<div class="char-title">CHAR 4</div> 
+					<div><img class="profile" src="./assets/images/cat_boy.gif" style="width: 200px"></div>
+					<div class="progress">
+					  <div class="progress-bar pb3" role="progressbar" aria-valuenow="70"
+					  aria-valuemin="0" aria-valuemax="200" style="width:100%">
+					  </div>
+					</div>
+					<div class="hp-all"><span class ="hp-display">200</span><span>/200</span></div>
+				</div>
+
+			</div>
+
+	</div> <!--row-->
 
 
 
-	<button class="atk-btn"><p>Attack!</p></button>
-	<button class="reset-btn" style="visibility:hidden"><p>Restart!</p></button>
 
-	<div id="stage">Arena:</div><br>
-		<div>
-			<div id="player-stage">Player: </div>
-			<div>VS</div> 
-			<div id="opponent-stage">Opponent: </div> 
-		</div>
+		
+			
 
-	<div id="result-box"></div>
-	
+			<div class="fight-club">
+				
+					<div class="arena" style="text-align:center">
+						<button class="btn atk-btn">Attack</button>
+						<button class="btn reset-btn" style="visibility:hidden">RESET</button>
 
+						<span id="player-stage" class="pit">Player: </span>
 
 
-	<script>
-	  $(document).ready(function(){
-	  	
-	  	var killCount = 0;
-	  	var arenaFilled = 0;
-	  	console.log(arenaFilled);
+						<span id="opponent-stage" class="pit">Opponent: </span> 
+						<span id="result-box"></span>
+					</div>
 
-	  	var playerHp;
-	  	var playerHpFull;
-	  	var playerAtk;
-	  	var playerAtkBonus;
-
-	  	var enemyHp;
-	  	var enemyHpFull;
-	  	var enemyCounter;
-
-	  	var clickityClack;//holds atk-btn function
-
-	  	var that; // stores class char parent for player
-	  	var thut; //stores class char parent for opponent
-	  	//Character selection
-	  	$(".char").on("click",function(){		
-	  		if (arenaFilled === 0){
-	  			that = this;
-	  			arenaFilled = 1;
-	  			playerHp = $(this).attr('data-hp');
-	  			playerHpFull = $(this).attr('data-hp');
-	  			playerAtk = $(this).attr('data-atk');
-	  			playerAtkBonus = $(this).attr('data-atk');
-	  			
-	  			$(this).appendTo("#player-stage");
-	  			//off click to prevent player from becoming opponent
-	  			$(this).off('click');
-
-	  			$(".atk-btn").off('click')
-
-	  			
-
-	  			console.log("Arena: " + arenaFilled);
-	  			console.log("Player: " + playerHp + " HP");
-	  			console.log("Player: " + playerAtk + " ATK");
-	  		}
-	  
-	  	//Enemy selection
-	  		else if (arenaFilled === 1){
-	  			thut=this;
-	  		 	arenaFilled = 2;
-	  		 	enemyHp = $(this).attr('data-hp');
-	  		 	enemyHpFull = $(this).attr('data-hp');
-	  			enemyCounter = $(this).attr('data-counter');
-
-	  		 	$(this).appendTo("#opponent-stage");
-	  		 	$(this).addClass("enemy");
-
-	  		 	//turns on atk-btn with function clickityClack
-	  		 	$(".atk-btn").on('click', clickityClack);
-
-	  		 	console.log("Arena: " + arenaFilled);
-	  		 	console.log("Opponent: " + enemyHp + " HP");
-	  			console.log("Opponent: " + enemyCounter + " COUNTERATK");
-	  		 }
-
-			});
-
-	  	//Attack Button
-	  	function clickityClack(){
-	  		//Fight must occur in phases: Player Attacks, checks if opponent is defeated. If not, opponent attacks, checks if player is defeated.
-
-	  		//Player attacks
-	  		enemyHp -= playerAtk;
-	  		playerAtk = parseInt(playerAtk) + parseInt(playerAtkBonus);
-	  		console.log("Player Attacked for " + playerAtk + " damage!");
-	  		console.log("Opponent: " + enemyHp + " HP");
-
-	  		//After opponent is defeated
-	  		if (enemyHp <= 0){
-	  			$(".enemy").remove();
-	  			arenaFilled = 1;
-	  			killCount += 1;
-
-	  			enemyHp = 0;
-	  			enemyHpFull = 0;
-	  			enemyCounter = 0;
-
-	  			//turns off atk-btn when opponent hp is dead
-	  			$(".atk-btn").off('click');
-	  			console.log("Kill Count: " + killCount)
-				}
-
-	  		//Enemy counter attacks
-	  		playerHp -= enemyCounter;
-	  		console.log("Enemy countered for " + enemyCounter + " damage!");
-	  		console.log("Player: " + playerHp + " HP");
-
-	  		//Loss Condition
-	  		if (playerHp <= 0){
-	  			//reset invisible until loss
-	  			$(".reset-btn").css("visibility","visible");
-	  			console.log("GAME OVER! YOU SUUUUCK!");
-	  		}
-	  		
-	  		//HP and Health Bars
-		  		// function hp(a,b){
-		  		// 	(parseInt(a)/parseInt(b))*100+ "%";
-		  		// }
-
-		  		// var playerHpBar = hp(playerHp, playerHpFull);
-		  		// var enemyHpBar = hp(enemyHp, enemyHpFull);
-
-	  		var playerHpBar = (parseInt(playerHp)/parseInt(playerHpFull))*100+ "%";
-				var enemyHpBar = (parseInt(enemyHp)/parseInt(enemyHpFull))*100+ "%";
-
-	  		function healthBar(x,y,z){
-	  			$(x).find(".progress-bar").css({"width": y});
-	  			$(x).find(".hp-display").html(z);
-					console.log(y);
-			  };
-
-			  healthBar(that, playerHpBar, playerHp);
-			  healthBar(thut, enemyHpBar, enemyHp);
-
-
-
-				// $(that).find(".progress-bar").css({"width": playerHpBar});
-	  	// 	$(that).find(".hp-display").html(playerHp);
-				// console.log(playerHpBar);
+			</div>
 
 				
-				// $(thut).find(".progress-bar").css({"width": enemyHpBar});
-				// $(thut).find(".hp-display").html(enemyHp);
-				// console.log(enemyHpBar);
+			
 
-				//Result text	  		 
+	
+	</div>
 
-	  		$("#result-box").html(
-	  			"<p>" + "You did " + playerAtk + " pts of damage!" + "</p>" + "<p>" + "Your opponent did " + enemyCounter + " pts of damage to you!" + "</p>"
-
-	  		);
-
-
-	  		//Win condition
-				if (killCount === 3){
-					console.log("YOU WIN!");
-				}	
-	  	};
-
-
-
-	  	//Reset Button
-	  	$(".reset-btn").on("click",function(){
-	  		location.reload();
-	  	});
-
-	  	//font #0dfe17
-	  	//TURN OFF BUTTON ATTACK WHEN NO OPPONENT SO IT DOESNT KEEP GOING UP
-
-	  });
-
-	</script>
+</div>
 
 </body>
 </html>
